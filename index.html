@@ -10,18 +10,29 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 400px; /* Adjust the width as needed */
         }
 
         .button {
-            width: 100px;
+            width: calc(20% - 10px); /* 5 columns with 10px margin between buttons */
             height: 40px;
-            margin: 10px;
+            margin: 10px 0; /* Add vertical margin */
             background-color: black;
             color: white;
             text-align: center;
             line-height: 40px;
             cursor: pointer;
             user-select: none;
+            transition: background-color 0.3s;
         }
 
         .button.clicked {
@@ -40,6 +51,27 @@
     </style>
 </head>
 <body>
+    <div class="button-container">
+        <div class="button">Button 1</div>
+        <div class="button">Button 2</div>
+        <div class="button">Button 3</div>
+        <div class="button">Button 4</div>
+        <div class="button">Button 5</div>
+        <div class="button">Button 6</div>
+        <div class="button">Button 7</div>
+        <div class="button">Button 8</div>
+        <div class="button">Button 9</div>
+        <div class="button">Button 10</div>
+        <div class="button">Button 11</div>
+        <div class="button">Button 12</div>
+        <div class="button">Button 13</div>
+        <div class="button">Button 14</div>
+        <div class="button">Button 15</div>
+        <div class="button">Button 16</div>
+        <div class="button">Button 17</div>
+        <div class="button">Button 18</div>
+        <div class="button">Button 19</div>
+    </div>
     <div id="confetti"></div>
     <script>
         const buttons = document.querySelectorAll('.button');
