@@ -1,1 +1,60 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .button.clicked {
+            background-color: grey;
+        }
+
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="confetti"></div>
+    <script>
+        const buttons = document.querySelectorAll('.button');
+        const confetti = document.getElementById('confetti');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('clicked');
+                confetti.style.backgroundImage = 'url("https://assets.cdn.smitpatel.me/confetti.gif")';
+                setTimeout(() => {
+                    button.classList.remove('clicked');
+                    confetti.style.backgroundImage = 'none';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
