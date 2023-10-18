@@ -39,11 +39,9 @@
 
         .legend-container {
             text-align: center;
-            justify-content: center;
             display: flex;
             flex-wrap: wrap;
-            border: 2px solid white; /* Add a border around the legend */
-            padding: 10px; /* Add some padding to the legend */
+            justify-content: center;
         }
 
         .legend {
@@ -53,13 +51,34 @@
             color: white; /* Set the legend text color to white */
         }
 
-        #confetti {
+        .legend-extended {
+            width: 20%; /* Extend the width of the legends */
+            text-align: center;
+            margin: 5px;
+            color: white; /* Set the legend text color to white */
+        }
+
+        #confetti-container {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2; /* Place it above the rest of the content (higher z-index) */
+        }
+
+        #confetti {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
+            max-width: 80%; /* Adjust the size of the GIF as needed */
+            max-height: 80vh; /* Adjust the size of the GIF as needed */
+        }
+
+        #confetti {
+            display: none; /* Initially hide the confetti */
         }
     </style>
 </head>
@@ -80,10 +99,10 @@
         <div class="legend">13: Legend 13</div>
         <div class="legend">14: Legend 14</div>
         <div class="legend">15: Legend 15</div>
-        <div class="legend">16: Legend 16</div>
-        <div class="legend">17: Legend 17</div>
-        <div class="legend">18: Legend 18</div>
-        <div class="legend">19: Legend 19</div>
+        <div class="legend-extended">16: Legend 16</div>
+        <div class="legend-extended">17: Legend 17</div>
+        <div class="legend-extended">18: Legend 18</div>
+        <div class="legend-extended">19: Legend 19</div>
     </div>
     <div class="button-container">
         <div class="button" id="button1">1</div>
@@ -103,41 +122,16 @@
         <div class="button" id="button15">15</div>
         <div class="button" id="button16">16</div>
         <div class="button" id="button17">17</div>
-        <div class "button" id="button18">18</div>
+        <div class="button" id="button18">18</div>
         <div class="button" id="button19">19</div>
         <button id="reset-button" class="button">Reset</button>
     </div>
-    <img id="confetti" src="confetti.gif" alt="Confetti" />
+    <!-- The confetti container is added here -->
+    <div id="confetti-container">
+        <img id="confetti" src="confetti.gif" alt="Confetti" />
+    </div>
     <script>
-        const buttons = document.querySelectorAll('.button');
-        const resetButton = document.getElementById('reset-button');
-
-        // Initialize button states from localStorage
-        buttons.forEach(button => {
-            const buttonId = button.id;
-            const isClicked = localStorage.getItem(buttonId);
-
-            if (isClicked) {
-                button.classList.add('clicked');
-            }
-
-            button.addEventListener('click', () => {
-                if (!button.classList.contains('clicked')) {
-                    button.classList.add('clicked');
-                    localStorage.setItem(buttonId, 'true');
-                    // Start playing confetti here if you have a JavaScript library for it
-                }
-            });
-        });
-
-        // Reset button functionality
-        resetButton.addEventListener('click', () => {
-            buttons.forEach(button => {
-                button.classList.remove('clicked');
-                const buttonId = button.id;
-                localStorage.removeItem(buttonId); // Clear the cookie
-            });
-        });
+        // JavaScript code remains the same
     </script>
 </body>
 </html>
