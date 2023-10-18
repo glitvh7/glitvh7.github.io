@@ -6,7 +6,7 @@
     <title>Button Clicker</title>
     <style>
         body {
-            background-color: white;
+            background-color: black; /* Set the background to black */
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -24,8 +24,8 @@
         .button {
             width: 100%;
             height: 40px;
-            background-color: black;
-            color: white;
+            background-color: white; /* Set the button background to white */
+            color: black; /* Set the button text color to black */
             text-align: center;
             line-height: 40px;
             cursor: pointer;
@@ -42,22 +42,24 @@
             justify-content: center;
             display: flex;
             flex-wrap: wrap;
+            border: 2px solid white; /* Add a border around the legend */
+            padding: 10px; /* Add some padding to the legend */
         }
 
         .legend {
-            width: 100%;
+            width: 20%; /* Arrange legend items in 5x4 arrangement */
             text-align: center;
             margin: 5px;
+            color: white; /* Set the legend text color to white */
         }
 
         #confetti {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
@@ -101,15 +103,13 @@
         <div class="button" id="button15">15</div>
         <div class="button" id="button16">16</div>
         <div class="button" id="button17">17</div>
-        <div class="button" id="button18">18</div>
+        <div class "button" id="button18">18</div>
         <div class="button" id="button19">19</div>
         <button id="reset-button" class="button">Reset</button>
     </div>
-    <div id="confetti"></div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <img id="confetti" src="confetti.gif" alt="Confetti" />
     <script>
         const buttons = document.querySelectorAll('.button');
-        const confetti = document.getElementById('confetti');
         const resetButton = document.getElementById('reset-button');
 
         // Initialize button states from localStorage
@@ -125,8 +125,7 @@
                 if (!button.classList.contains('clicked')) {
                     button.classList.add('clicked');
                     localStorage.setItem(buttonId, 'true');
-                    startConfetti();
-                    setTimeout(stopConfetti, 1000);
+                    // Start playing confetti here if you have a JavaScript library for it
                 }
             });
         });
@@ -139,20 +138,6 @@
                 localStorage.removeItem(buttonId); // Clear the cookie
             });
         });
-
-        function startConfetti() {
-            particlesJS('confetti', {
-                particles: {
-                    number: { value: 200 },
-                    size: { value: 5 },
-                },
-                interactivity: { detect_on: 'canvas', events: { resize: true } },
-            });
-        }
-
-        function stopConfetti() {
-            confetti.innerHTML = '';
-        }
     </script>
 </body>
 </html>
