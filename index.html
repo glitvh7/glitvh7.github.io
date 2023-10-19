@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Fahkwang' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bart's Birthday Coupons</title>
+    <title>MrMaBaby's Coupons</title>
     <style>
+    	h1 {
+  			text-align: center;
+		}
+        
+        h2 {
+  			text-align: center;
+		}
+        
         body {
             background-color: black; /* Set the background to black */
             display: flex;
@@ -13,51 +22,41 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: 'Fahkwang';font-size: 18px;
         }
 
         .button-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+            gap: 50px;
         }
 
         .button {
             width: 100%;
-            height: 40px;
             background-color: white; /* Set the button background to white */
             color: black; /* Set the button text color to black */
+            display: flex;
             text-align: center;
+  			justify-content: center;
+  			align-items: center;
             line-height: 40px;
             cursor: pointer;
             user-select: none;
             transition: background-color 0.3s;
+            inline-size: 150px;
+  			overflow-wrap: break-word;
+            padding: 32px 16px;            
         }
+        
+        .button:hover {
+  		background-color: #FF69B4;
+  		color: black;
+		}
 
         .button.clicked {
             background-color: grey;
         }
-
-        .legend-container {
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .legend {
-            width: 20%; /* Arrange legend items in 5x4 arrangement */
-            text-align: center;
-            margin: 5px;
-            color: white; /* Set the legend text color to white */
-        }
-
-        .legend-extended {
-            width: 33%; /* Extend the width of the legends */
-            text-align: left;
-            margin: 5px;
-            color: white; /* Set the legend text color to white */
-        }
-
+              
         #confetti-container {
             position: fixed;
             top: 0;
@@ -80,69 +79,34 @@
         #confetti {
             display: none; /* Initially hide the confetti */
         }
-
-	#page-title {
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Set the title text color to white */
-            text-align: center;
-            margin-bottom: 20px; /* Add space between the title and the subtitle */
-        }
-
-	#subtitle {
-            display: block;
-            margin-top: 10px; /* Adjust the margin to control the space between title and subtitle */
-            text-align: center;
-            font-size: 24px; /* Adjust the font size as needed */
-            color: white; /* Set the subtitle text color to white */
-        }
+        
     </style>
 </head>
 <body>
     <!-- Add the title element above the legend -->
-    <div id="page-title">Bart's Birthday Coupons</div>
-    <div id="subtitle">From Erica, With a Lot of Mwahs</div>
-    <div class="legend-container">
-        <div class="legend">1: Legend 1</div>
-        <div class="legend">2: Legend 2</div>
-        <div class="legend">3: Legend 3</div>
-        <div class="legend">4: Legend 4</div>
-        <div class="legend">5: Legend 5</div>
-        <div class="legend">6: Legend 6</div>
-        <div class="legend">7: Legend 7</div>
-        <div class="legend">8: Legend 8</div>
-        <div class="legend">9: Legend 9</div>
-        <div class="legend">10: Legend 10</div>
-        <div class="legend">11: Legend 11</div>
-        <div class="legend">12: Legend 12</div>
-        <div class="legend">13: Legend 13</div>
-        <div class="legend">14: Legend 14</div>
-        <div class="legend">15: Legend 15</div>
-        <div class="legend">16: Legend 16</div>
-        <div class="legend-extended">17: Legend 17</div>
-        <div class="legend-extended">18: Legend 18</div>
-        <div class="legend-extended">19: Legend 19</div>
-    </div>
+    <h1 style="font-size:40px; color : white;" >Mr MaBaby's Coupons</h1>
+    <h2 style="font-size:20px; color : white;" >From Mrs MaBaby, With a Lot of Mwahs</h2>
     <div class="button-container">
-        <div class="button" id="button1">1</div>
-        <div class="button" id="button2">2</div>
-        <div class="button" id="button3">3</div>
-        <div class="button" id="button4">4</div>
-        <div class="button" id="button5">5</div>
-        <div class="button" id="button6">6</div>
-        <div class="button" id="button7">7</div>
-        <div class="button" id="button8">8</div>
-        <div class="button" id="button9">9</div>
-        <div class="button" id="button10">10</div>
-        <div class="button" id="button11">11</div>
-        <div class="button" id="button12">12</div>
-        <div class="button" id="button13">13</div>
-        <div class="button" id="button14">14</div>
-        <div class="button" id="button15">15</div>
-        <div class="button" id="button16">16</div>
-        <div class="button" id="button17">17</div>
-        <div class="button" id="button18">18</div>
-        <div class="button" id="button19">19</div>
-        <button id="reset-button" class="button">Reset</button>
+        <div class="button" id="button1">Judge Erica's Browser History</div>
+        <div class="button" id="button2">Embarrass Erica at a Game</div>
+        <div class="button" id="button3">Girl Advice</div>
+        <div class="button" id="button4">Math Help</div>
+        <div class="button" id="button5">Watch a Movie</div>
+        <div class="button" id="button6">Make Erica Do Smn Stupid</div>
+        <div class="button" id="button7">Erica Makes Smn With You</div>
+        <div class="button" id="button8">Virtual Haunted House</div>
+        <div class="button" id="button9">Erica Takes You Smwhere on Video Call</div>
+        <div class="button" id="button10">Soft - Pick a Pose</div>
+        <div class="button" id="button11">3-Day Ban - Pick a Punishment</div>
+        <div class="button" id="button12">Soft - Pick a Pose</div>
+        <div class="button" id="button13">Free Choice</div>
+        <div class="button" id="button14">Soft - Pick a Pose</div>
+        <div class="button" id="button15">Free Choice</div>
+        <div class="button" id="button16">Virtual Escape Room</div>
+        <div class="button" id="button17">Virtual Date</div>
+        <div class="button" id="button18">Time Travel</div>
+        <div class="button" id="button19">Virtual Travel</div>
+        <div class="button" id="resetbutton">Reset</div>
     </div>
     <!-- The confetti container is added here -->
     <div id="confetti-container">
